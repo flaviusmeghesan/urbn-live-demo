@@ -13,15 +13,55 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+      - name: Check for Node project
+        id: check_node
+        run: |
+          if [ -f package.json ]; then
+            echo "has_node=true" >> "$GITHUB_ENV"
+          else
+            echo "has_node=false" >> "$GITHUB_ENV"
+          fi
 
-      - name: Setup Node
+      - name: Setup Node (if needed)
+        if: env.has_node == 'true'
         uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+      - name: Install & build (if needed)
+        if: env.has_node == 'true'
+        run: |
+          # Prefer npm ci when lockfile exists (faster & reproducible), else fallback to npm install
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
 
-      - name: Build project
-        run: npm run build
+          # Run build if script exists
+          if npm run | grep -q " build"; then
+            npm run build
+          fi
+
+      - name: Prepare production files
+        run: |
+          # If build produced ./dist use it. Otherwise copy public files into ./dist for publishing.
+          if [ -d ./dist ]; then
+            echo "Using existing ./dist"
+          else
+            echo "No ./dist found — copying repository files into ./dist"
+            mkdir -p ./dist
+            # copy all site files but avoid Git metadata and workflow files
+            shopt -s dotglob || true
+            for f in * .*; do
+              case "$f" in
+                .|..|.git|.github)
+                  continue
+                  ;;
+              esac
+              cp -r "$f" ./dist/ || true
+            done
+          fi
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
