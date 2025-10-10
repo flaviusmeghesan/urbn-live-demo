@@ -26,8 +26,9 @@ jobs:
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
         with:
-          name: production-files
-          path: ./
+            name: production-files
+            # upload entire repository root (your build artifacts are in the repo root)
+            path: ./
 
   deploy:
     name: Deploy
@@ -39,11 +40,13 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: production-files
-          path: ./dist
+            name: production-files
+            # download artifact into the workspace root so publish_dir: ./ will publish the repo root
+            path: .
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+            # publish the repository root (your build output is at the repo root)
+            publish_dir: ./
