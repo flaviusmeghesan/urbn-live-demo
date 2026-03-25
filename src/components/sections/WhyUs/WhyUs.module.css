@@ -1,0 +1,173 @@
+.section {
+  background-color: var(--color-bg);
+  padding: var(--space-xl) 0;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* LEFT — text block, ~55% */
+.content {
+  flex: 55 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, var(--text-h2));
+  font-weight: var(--weight-heavy);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-off-white);
+}
+
+.accent {
+  color: var(--color-primary);
+}
+
+.body {
+  font-family: var(--font-body);
+  font-size: clamp(0.9375rem, 1.3vw, var(--text-body-3));
+  font-weight: var(--weight-light);
+  color: var(--color-muted);
+  line-height: 1.7;
+  max-width: 44ch;
+  overflow-wrap: break-word;
+}
+
+/* RIGHT — 4 stacked cards, ~45% */
+.cards {
+  flex: 45 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* CARD */
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.25rem;
+  background-color: var(--color-surface);
+  border: 1px solid transparent;
+  border-radius: 40px;
+  padding: 1.125rem 1.5rem;
+  min-height: 5.75rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  border-color: var(--color-primary-mid);
+  box-shadow: 0 4px 20px rgba(235, 116, 38, 0.1);
+}
+
+/* ICON BOX — portocaliu, rounded square ca in Figma (99x99 rx=29) */
+.iconBox {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--color-primary);
+  border-radius: 0.875rem; /* ~14px = proportional cu rx=29/99*56 */
+  color: var(--color-white);
+  transition: background-color 0.25s ease;
+}
+
+.card:hover .iconBox {
+  background-color: var(--color-primary-dark);
+}
+
+/* CARD TEXT */
+.cardText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(0.9375rem, 1.2vw, 1.125rem);
+  font-weight: var(--weight-heavy);
+  color: var(--color-off-white);
+  line-height: 1.2;
+}
+
+.cardDesc {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: var(--weight-light);
+  color: var(--color-muted);
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .inner {
+    gap: 2.5rem;
+    padding: 0 1.5rem;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 0 1.25rem;
+  }
+
+  .content {
+    flex: unset;
+  }
+
+  .body {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .cards {
+    flex: unset;
+    gap: 0.75rem;
+  }
+
+  /* Mobile card: mai compact ca in Figma (h=131) */
+  .card {
+    border-radius: 40px;
+    padding: 1rem 1.25rem;
+    min-height: 5rem;
+    gap: 1rem;
+  }
+
+  /* Mobile icon: 56x56 rx=28 = perfect circle */
+  .iconBox {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .heading {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+}

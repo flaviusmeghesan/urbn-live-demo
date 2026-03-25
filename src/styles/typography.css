@@ -1,0 +1,46 @@
+.h1 {
+  font-family: var(--font-heading);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-heavy);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.h2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-heavy);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-heavy);
+  line-height: 1.2;
+}
+
+.body1 {
+  font-family: var(--font-body);
+  font-size: var(--text-body-1);
+  font-weight: var(--weight-medium);
+}
+
+.body2 {
+  font-family: var(--font-body);
+  font-size: var(--text-body-2);
+  font-weight: var(--weight-light);
+}
+
+.body3 {
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  font-weight: var(--weight-light);
+}
+
+.body4 {
+  font-family: var(--font-body);
+  font-size: var(--text-body-4);
+  font-weight: var(--weight-ultralight);
+}

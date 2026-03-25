@@ -1,0 +1,134 @@
+.section {
+  background-color: #080d0f;
+  padding: var(--space-xl) 0;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1820px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* HEADING BLOCK */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 860px;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.5vw, var(--text-h2));
+  font-weight: var(--weight-heavy);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-off-white);
+}
+
+.body {
+  font-family: var(--font-body);
+  font-size: clamp(0.9375rem, 1.2vw, var(--text-body-4));
+  font-weight: var(--weight-light);
+  color: var(--color-muted);
+  line-height: 1.7;
+  max-width: 72ch;
+}
+
+/* IMAGE GRID */
+.grid {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(1rem, 2vw, 2.5rem);
+  align-items: stretch;
+}
+
+/* CARD */
+.card {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  aspect-ratio: 3 / 2;
+  border-radius: 40px;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+  transition:
+    outline-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  outline-color: var(--color-primary);
+  box-shadow:
+    0 0 20px rgba(235, 116, 38, 0.35),
+    0 0 50px rgba(235, 116, 38, 0.15);
+}
+
+/* Middle card gets a base glow like in Figma */
+.cardFeatured {
+  box-shadow:
+    0 8px 32px rgba(235, 116, 38, 0.18),
+    0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.cardFeatured:hover {
+  box-shadow:
+    0 0 24px rgba(235, 116, 38, 0.45),
+    0 0 60px rgba(235, 116, 38, 0.2);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.04);
+}
+
+/* TABLET */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .inner {
+    padding: 0 2rem;
+  }
+
+  .card {
+    border-radius: 28px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 1.25rem;
+    gap: 2rem;
+  }
+
+  .grid {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card {
+    /* Pe mobile: scoatem flex si dam width explicit
+       ca aspect-ratio sa poata calcula inaltimea */
+    flex: 0 0 auto;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    border-radius: 24px;
+  }
+
+  .cardFeatured {
+    box-shadow: 0 4px 20px rgba(235, 116, 38, 0.15);
+  }
+
+  .heading {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+}
