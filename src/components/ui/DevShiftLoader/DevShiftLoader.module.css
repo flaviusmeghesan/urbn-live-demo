@@ -16,11 +16,11 @@
 }
 
 .curtainTR {
-  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 50%);
+  clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
 }
 
 .curtainBL {
-  clip-path: polygon(0% 0%, 50% 0%, 100% 50%, 100% 100%, 0% 100%);
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
 }
 
 /* Slide animations */
@@ -73,12 +73,12 @@
 /* KEYFRAMES */
 @keyframes dsSlideTR {
   0%   { transform: translate(0, 0); }
-  100% { transform: translate(55%, -55%); }
+  100% { transform: translate(-55%, -55%); }
 }
 
 @keyframes dsSlideBL {
   0%   { transform: translate(0, 0); }
-  100% { transform: translate(-55%, 55%); }
+  100% { transform: translate(55%, 55%); }
 }
 
 @keyframes dsBreathe {
