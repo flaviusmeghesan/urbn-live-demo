@@ -47,7 +47,7 @@ export default function DevShiftLoader({ holdMs = 1600, onComplete }: DevShiftLo
         className={`${styles.logo} ${splitting ? styles.logoSplit : styles.logoBreathe}`}
         aria-hidden="true"
       >
-        <g transform="translate(1280,0) scale(-1,1)">
+        <g transform="translate(1280,2361.13) scale(-1,-1)">
           <polygon
             points="1280 1477.42 1280 1700.88 0 2361.13 0 2093.2 941.56 1590.24 0 1211.66 0 943.37 1280 1477.42"
             fill="#EB7426"

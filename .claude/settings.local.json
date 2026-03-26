@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx:*)",
+      "Bash(cp -r /Users/flaviusmeghesan/Documents/devshift-temp/. /Users/flaviusmeghesan/Documents/devshift/)",
+      "Bash(rm -rf /Users/flaviusmeghesan/Documents/devshift-temp)",
+      "Bash(mkdir -p /Users/flaviusmeghesan/Documents/devshift/src/styles)",
+      "Bash(mkdir -p /Users/flaviusmeghesan/Documents/devshift/src/components/sections/Navbar)",
+      "Bash(mkdir -p /Users/flaviusmeghesan/Documents/devshift/src/components/sections/Hero)",
+      "Bash(mkdir -p /Users/flaviusmeghesan/Documents/devshift/src/components/ui)",
+      "Bash(npm run:*)",
+      "Bash(npm install:*)",
+      "Bash(npm list:*)",
+      "Bash(git remote:*)",
+      "Bash(git fetch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git stash:*)",
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
