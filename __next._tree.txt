@@ -2,4 +2,4 @@
 :HL["/_next/static/media/MonaSans_Italic_VariableFont_wdth%2Cwght-s.p.0cbjnkqb6nnrq.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/MonaSans_VariableFont_wdth%2Cwght-s.p.0jj~r38sytjl~.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/chunks/0-6t4-5k6b_xq.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"J496tydWFoc2yqdCUPKQj"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"bTRkYIK00oe3uXfhxACvC"}
